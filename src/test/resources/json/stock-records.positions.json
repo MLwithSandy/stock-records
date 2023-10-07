@@ -1,0 +1,16 @@
+{
+  "isin": "123",
+  "accountNo": "12-12345-15",
+  "placeOfSafekeeping": "US",
+  "accountCurrency": "CHF",
+  "tradeCurrency": "USD",
+  "safekeepingCurrency": "USD",
+  "assetClassSpecificAttributes": {
+    "expiryDate": "2021-12-31",
+    "strikePrice": "100",
+    "issueDate": "2021-01-01",
+    "interestRate": "0.5",
+    "couponRate": "0.5"
+  },
+  "quantity": "100"
+}

@@ -1,0 +1,14 @@
+spring:
+  application:
+    # application name
+    name: stock-records
+  data:
+    mongodb:
+      uri:
+      database:
+
+# Spring server port 33000
+server:
+  port: 33000
+
+
