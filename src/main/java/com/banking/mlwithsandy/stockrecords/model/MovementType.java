@@ -1,17 +1,19 @@
 package com.banking.mlwithsandy.stockrecords.model;
 
 public enum MovementType {
-    DEBIT ,
-    CREDIT;
+    DEBIT ("debit"),
+    CREDIT("credit");
 
-    public static MovementType fromString(String movementType) {
-        for (MovementType type : MovementType.values()) {
-            if (type.name().equalsIgnoreCase(movementType)) {
-                return type;
-            }
-        }
-        return null;
+    private final String movementType;
+
+    MovementType(String movementType) {
+        this.movementType = movementType.toUpperCase();
     }
+
+    public String getMovementType() {
+        return movementType;
+    }
+
     @Override
     public String toString() {
         return super.toString().toLowerCase();

@@ -27,7 +27,7 @@ public class PositionsController {
         }
 
         try {
-            var savedPosition = positionsService.savePosition(position);
+            var savedPosition = positionsService.save(position);
             return ResponseEntity.status(HttpStatus.OK).body(savedPosition);
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e.getMessage());
@@ -42,7 +42,7 @@ public class PositionsController {
         }
 
         try {
-            var position = positionsService.getPositionById(id);
+            var position = positionsService.getById(id);
             if (Objects.isNull(position)) {
                 return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Position not found");
             } else {

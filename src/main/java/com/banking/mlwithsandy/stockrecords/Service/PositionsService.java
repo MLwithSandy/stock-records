@@ -10,13 +10,14 @@ import org.springframework.transaction.annotation.Transactional;
 @Service
 @Slf4j
 @Transactional
-public class PositionsService {
+public class PositionsService implements StockRecordsService<Position>{
 
     @Autowired
     private PositionsRepository positionsRepository;
 
     // write a method which takes Position object and saves it to PositionsRepository
-    public Position savePosition(Position position) {
+    @Override
+    public Position save(Position position) {
         try {
             position.setId(positionsRepository.count() + 1);
         } catch (Exception e) {
@@ -32,7 +33,8 @@ public class PositionsService {
     }
 
     // Write a method which takes an ID and returns a Position object from PositionsRepository
-    public Position getPositionById(Long id) {
+    @Override
+    public Position getById(Long id) {
         try {
             var position = positionsRepository.findById(id);
             return position.orElse(null);

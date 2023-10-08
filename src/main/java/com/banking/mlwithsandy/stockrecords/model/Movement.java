@@ -2,6 +2,7 @@ package com.banking.mlwithsandy.stockrecords.model;
 
 import lombok.Builder;
 import lombok.Data;
+import lombok.experimental.SuperBuilder;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import javax.persistence.Embedded;
@@ -10,23 +11,14 @@ import java.math.BigDecimal;
 
 @Document("movements")
 @Data
-@Builder
-public class Movement {
-    @Id
-    private Long id;
-    private String accountNo;
-    private String isin;
-    private String placeOfSafekeeping;
-    private String accountCurrency;
-    private String tradeCurrency;
-    private String safekeepingCurrency;
-    @Embedded
-    private AssetClassSpecificAttributes assetClassSpecificAttributes;
-    private MovementType movementType;
-    private BigDecimal quantity;
+@SuperBuilder
+public class Movement extends StockRecord {
+
     private String settlementObligationId;
+    private MovementType movementType;
     private String remarks;
     @Embedded
     private ReverasalDetails reversalDetails;
     private Long linkedPositionId;
+    private BigDecimal quantity;
 }
