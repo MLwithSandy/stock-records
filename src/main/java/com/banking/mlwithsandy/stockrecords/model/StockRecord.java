@@ -1,23 +1,25 @@
 package com.banking.mlwithsandy.stockrecords.model;
 
-import lombok.Builder;
+import com.querydsl.core.annotations.QueryEmbeddable;
+import com.querydsl.core.annotations.QueryEmbedded;
+import com.querydsl.core.annotations.QueryEntity;
+import jakarta.validation.Valid;
+import jakarta.validation.constraints.Min;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
 import org.springframework.data.annotation.Id;
+import org.springframework.validation.annotation.Validated;
 
 import javax.persistence.Embedded;
+import java.math.BigDecimal;
 
 @Data
 @SuperBuilder
-public class StockRecord {
-    @Id
-    private Long id;
-    private String accountNo;
-    private String isin;
-    private String placeOfSafekeeping;
-    private String accountCurrency;
-    private String tradeCurrency;
-    private String safekeepingCurrency;
+@NoArgsConstructor
+public abstract class StockRecord {
     @Embedded
-    private AssetClassSpecificAttributes assetClassSpecificAttributes;
+    @QueryEmbedded
+    private StockRecordKey stockRecordKey;
+    private BigDecimal quantity;
 }

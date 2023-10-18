@@ -2,17 +2,18 @@ package com.banking.mlwithsandy.stockrecords.model;
 
 import lombok.Builder;
 import lombok.Data;
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
+import lombok.experimental.SuperBuilder;
 
 import java.math.BigDecimal;
 
 @Data
-@Builder
-public class AssetClassSpecificAttributes {
-    private String expiryDate;
-    private String strikePrice;
+@SuperBuilder
+public class SecurtiesKeyAttributes {
+    private String securitiesType;
     private String issueDate;
+    private String expiryDate;
+    private BigDecimal denomination;
+    private BigDecimal strikePrice;
     private BigDecimal interestRate;
     private BigDecimal couponRate;
 }

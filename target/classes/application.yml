@@ -6,9 +6,19 @@ spring:
     mongodb:
       uri:
       database:
+      auto-index-creation: true
 
 # Spring server port 33000
 server:
   port: 33000
 
 
+springdoc:
+  api-docs:
+    path: /api-docs
+  swagger-ui:
+    path: /swagger
+  operationsSorter: method
+
+javers:
+  newObjectSnapshot: true

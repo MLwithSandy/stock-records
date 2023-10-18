@@ -1,8 +1,8 @@
 package com.banking.mlwithsandy.stockrecords.model;
 
 public enum MovementType {
-    DEBIT ("debit"),
-    CREDIT("credit");
+    DEBIT ("DEBIT"),
+    CREDIT("CREDIT");
 
     private final String movementType;
 

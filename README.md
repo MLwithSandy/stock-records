@@ -38,11 +38,12 @@ Stock records is used for managing Safekeeping Positions, Movements and Blocking
 - 
 ### Pending topics
 
+- [x] Unique index on positions document for account and id
 - [ ] Booking date in Positions and Transactions
 - [ ] Settlement date in Transactions
-- [ ] Attributes about ownership - pledged, mortgage unique no etc
-- [ ] Asset class attribute such as denomination
-- [ ] Audit trail of changes - all entities
+- [x] Attributes about ownership - pledged, mortgage unique no etc
+- [x] Asset class attribute such as denomination
+- [x] Audit trail of changes - all entities
 - [ ] Support for as per date and availability
 - [ ] implementation of blocking entities and services
 
